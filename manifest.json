@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "MonoDic GPT generated",
+  "description": "Generates single word mono-dictionary explanation using openai API",
+  "version": "1.0",
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": "src/assets/icon.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "options_ui": {
+    "page": "src/settings/settings.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "permissions": ["contextMenus", "storage", "clipboardRead"],
+  "web_accessible_resources": [
+    {
+      "resources": ["secondary_popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/popup/popup.js"]
+    }
+  ]
+}

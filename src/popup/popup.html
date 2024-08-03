@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      width: 450px;
+    }
+
+    text {
+      font-style: italic;
+    }
+
+    textarea {
+      padding: 12px 12px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      background-color: #f8f8f8;
+      font-size: 16px;
+      resize: none;
+      width: 92vw;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    .container {
+      padding: 5px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 100vh;
+    }
+
+    input[type="submit"] {
+      background-color: #e6e6e6;
+      border: solid 1px #a7a7a7;
+      border-radius: 6px;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    #selectedText {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 16px;
+    }
+
+    #generateBtn {
+      width: 65%;
+      align-self: center;
+    }
+
+    #go-to-options {
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px;
+      border-radius: 4px;
+      padding: 5px;
+      position: fixed;
+      top: 25px;
+      right: 25px;
+    }
+
+    #go-to-options:hover {
+      cursor: pointer;
+    }
+
+    #generateBtn {
+      appearance: button;
+      backface-visibility: hidden;
+      background-color: #405cf5;
+      border-radius: 6px;
+      border-width: 0;
+      box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+        rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      font-family: -apple-system, system-ui, "Segoe UI", Roboto,
+        "Helvetica Neue", Ubuntu, sans-serif;
+      font-size: 15px;
+      height: 44px;
+      line-height: 1.15;
+      font-weight: bold;
+      outline: none;
+      overflow: hidden;
+      padding: 0 10px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transform: translateZ(0);
+      transition: all 0.2s, box-shadow 0.08s ease-in;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 250px;
+      margin-bottom: 25px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Hello Extensions</h1>
+      <label for="contextPhrase">(Phrase/Word)</label>
+
+      <textarea
+        id="contextPhrase"
+        name="contextPhrase"
+        rows="3"
+        cols="40"
+        maxlength="127"
+      ></textarea>
+
+      <p id="selectedText">(Single word)</p>
+      <a id="go-to-options">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        >
+          <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L297.5 310.5c17 6.2 35.4 9.5 54.5 9.5zM80 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+          />
+        </svg>
+      </a>
+      <button id="generateBtn" value="Generate Flashcard content">
+        Generate Flashcard content
+      </button>
+
+      <style>
+        #boxText {
+          padding: 8px 8px;
+          border: 1px solid #d8d8d8;
+          border-radius: 6px;
+          background-color: #f8f8f8;
+          font-size: 18px;
+          cursor: default;
+        }
+
+        #resultContent {
+          width: 92vw;
+        }
+      </style>
+      <div id="resultContent"></div>
+    </div>
+  </body>
+
+  <script src="popup.js"></script>
+</html>
