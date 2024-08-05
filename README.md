@@ -31,7 +31,3 @@ To access the options page:
 
 - Click on the "Options" button within the extension popup.
 - Alternatively, go to `chrome://extensions/`, find the Single Word Mono-Dictionary Extension, and click "Options".
-
-## License
-
-This project is licensed under the MIT License.
